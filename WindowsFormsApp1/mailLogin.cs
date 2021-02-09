@@ -237,7 +237,6 @@ namespace WindowsFormsApp1
                         }
 
                         js.ExecuteScript(jsCommand);
-                        //var son = sayfaSonu;
 
                     }
                 }

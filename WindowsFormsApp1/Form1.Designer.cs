@@ -52,6 +52,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.KontrolluTakip = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.Takipci_SayisiTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -270,7 +273,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(149, 244);
+            this.button7.Location = new System.Drawing.Point(29, 231);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 40);
             this.button7.TabIndex = 13;
@@ -297,18 +300,48 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.KontrolluTakip);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.listBox1);
             this.panel4.Controls.Add(this.Takipci_SayisiTB);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.button7);
             this.panel4.Location = new System.Drawing.Point(733, 52);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(370, 298);
+            this.panel4.Size = new System.Drawing.Size(359, 298);
             this.panel4.TabIndex = 14;
+            // 
+            // KontrolluTakip
+            // 
+            this.KontrolluTakip.Location = new System.Drawing.Point(176, 248);
+            this.KontrolluTakip.Name = "KontrolluTakip";
+            this.KontrolluTakip.Size = new System.Drawing.Size(75, 23);
+            this.KontrolluTakip.TabIndex = 19;
+            this.KontrolluTakip.Text = "button8";
+            this.KontrolluTakip.UseVisualStyleBackColor = true;
+            this.KontrolluTakip.Click += new System.EventHandler(this.KontrolluTakip_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(43, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "label7";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(191, 74);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 16;
             // 
             // Takipci_SayisiTB
             // 
             this.Takipci_SayisiTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Takipci_SayisiTB.Location = new System.Drawing.Point(210, 106);
+            this.Takipci_SayisiTB.Location = new System.Drawing.Point(211, 13);
             this.Takipci_SayisiTB.Name = "Takipci_SayisiTB";
             this.Takipci_SayisiTB.Size = new System.Drawing.Size(100, 23);
             this.Takipci_SayisiTB.TabIndex = 15;
@@ -319,7 +352,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(3, 109);
+            this.label6.Location = new System.Drawing.Point(3, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 17);
             this.label6.TabIndex = 14;
@@ -375,6 +408,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Takipci_SayisiTB;
+        private System.Windows.Forms.Button KontrolluTakip;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

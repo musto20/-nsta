@@ -90,7 +90,24 @@ namespace WindowsFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            log.Follow(Convert.ToInt32(Takipci_SayisiTB.Text));
+            int i = 10;
+            while (i>0)
+            {
+                i--;
+                if (i==0)
+                {
+                    listBox1.Items.RemoveAt(0);
+                }
+            } 
+            //if (Takipci_SayisiTB.Text=="")
+            //{
+            //    MessageBox.Show("Takip edilecek kişi sayısı boş bırakılamaz...");
+            //}
+            //else
+            //{
+            //    log.Follow(Convert.ToInt32(Takipci_SayisiTB.Text));
+            //}
+            
         }
 
 
@@ -105,6 +122,11 @@ namespace WindowsFormsApp1
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void KontrolluTakip_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Add(Takipci_SayisiTB.Text);
         }
 
         private void Takipci_SayisiTB_KeyDown(object sender, KeyEventArgs e)
@@ -126,5 +148,6 @@ namespace WindowsFormsApp1
             log.mailShare();
             timer1.Interval = 60000;
         }
+
     }
 }
