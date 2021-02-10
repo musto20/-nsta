@@ -1,6 +1,8 @@
 ﻿using AutoItX3Lib;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -18,16 +20,14 @@ namespace WindowsFormsApp1
     {
         public static int dosyaSayisi, i = 0, control = 0;
         public IWebDriver driver { get; set; }
-        //private readonly IObjectContainer objectContainer;
         public int mailLog(string mail, string pass)
         {
             try
             {
                 ChromeOptions options = new ChromeOptions();
-                options.EnableMobileEmulation("iPhone 6");
+                //options.EnableMobileEmulation("iPhone 6");
                 //options.AddArgument("--headless");
                 driver = new ChromeDriver(options);
-                //_objectContainer.RegisterInstanceAs<IWebDriver>(driver);
                 driver.Navigate().GoToUrl("https://www.instagram.com/");
                 Thread.Sleep(2000);
                 Thread.Sleep(2000);
@@ -47,15 +47,14 @@ namespace WindowsFormsApp1
                 Thread.Sleep(2500);
                 IWebElement loginBtn = driver.FindElement(By.XPath("//button[contains(.,'Giriş Yap')]"));
                 loginBtn.Click();
-                Console.WriteLine("Hesap Bilgileri Girildi!");
-                Thread.Sleep(6500);
+                Thread.Sleep(3500);
                 //driver.Navigate().GoToUrl("https://www.instagram.com/accounts/onetap/?next=%2F");
                 //IWebElement SimdiDegil = driver.FindElement(By.XPath("//button[contains(.,'Şimdi Değil')]"));
 
 
                 //SimdiDegil.Click(); Thread.Sleep(2500);
-                IWebElement SimdiDegil2 = driver.FindElement(By.XPath("//button[contains(text(), 'İptal')]"));
-                SimdiDegil2.Click();
+                //IWebElement SimdiDegil2 = driver.FindElement(By.XPath("//button[contains(text(), 'İptal')]"));
+                //SimdiDegil2.Click();
                 return (control);
             }
             catch (Exception)
@@ -112,7 +111,9 @@ namespace WindowsFormsApp1
             }
         }
             public void mailShare()
-        {        
+        {
+            IWebElement SimdiDegil2 = driver.FindElement(By.XPath("//button[contains(text(), 'İptal')]"));
+            SimdiDegil2.Click();
             string yol = "Data source=Insta.db3";
             SQLiteConnection baglanti = new SQLiteConnection(yol);
             
@@ -164,7 +165,7 @@ namespace WindowsFormsApp1
                 
             }
         }
-        public void Follow(int takip)
+        public void Follow(int takip )
         {
             
             string[] stringSeparators = new string[] { "\r\n" };
@@ -193,15 +194,6 @@ namespace WindowsFormsApp1
                 driver.FindElement(By.XPath("//li[3]/a")).Click();
                 Thread.Sleep(2000);
 
-
-                //var sayfaSonu = Convert.ToInt32(js.ExecuteScript(jsCommand));
-                //while (true)
-                //{
-                //    var son = sayfaSonu;
-                //    sayfaSonu = Convert.ToInt32(js.ExecuteScript(jsCommand));
-                //    if (son == sayfaSonu)
-                //        break;
-                //}
                 if (Convert.ToInt32(takipcisayisi[0])>=takip)
                 {
                     for (int j = 1; j <= takip; j++)
@@ -216,9 +208,7 @@ namespace WindowsFormsApp1
                             Thread.Sleep(1000);
 
                         }
-
                         js.ExecuteScript(jsCommand);
-
                     }
                 }
                 else
@@ -246,6 +236,100 @@ namespace WindowsFormsApp1
                 driver.FindElement(By.XPath("//li[3]/a")).Click();
                 Thread.Sleep(2000);
             }
+        }
+        public void KontrolluFollow(string name, int sayi)
+        {
+                int t = 2;
+                string[] stringSeparators = new string[] { "\r\n" };
+                driver.Navigate().GoToUrl("https://www.instagram.com/" + name + "/");
+                IWebElement takipci2 = driver.FindElement(By.XPath("//li[2]/a"));
+                string sayi2 = takipci2.Text;
+                string[] takipcisayisi = sayi2.Split(stringSeparators, StringSplitOptions.None);
+
+            driver.FindElement(By.XPath("//li[3]/a")).Click();
+            //driver.Navigate().GoToUrl("https://www.instagram.com/" + name + "/followers/");
+            Thread.Sleep(2000);
+                while (0 <= sayi)
+                {
+                    try
+                    {
+                     string jsCommand = "" +
+                        "window.scrollTo(0," + 54 * t + ");";
+                        IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                    js.ExecuteScript(jsCommand);
+                    IWebElement buttons = driver.FindElement(By.CssSelector(".wo9IH:nth-child("+t+") .sqdOP"));
+
+                        if ("Takip Et" == buttons.Text)
+                        {
+                            buttons.Click();
+                            Thread.Sleep(1000);
+                            sayi--;
+                        }
+                        t++;
+                        
+                        //if (Convert.ToInt32(takipcisayisi[0]) == i)
+                        //{js.ExecuteScript(jsCommand);
+                        //    break;
+                        //}
+                    }
+                    catch (Exception)
+                    {
+                    
+                    t++;
+                        continue;
+                    }
+                    
+                }
+            }
+        public int mailLog2(string mail, string pass)
+        {
+            try
+            {
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                string user_agent = "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
+                var options = new FirefoxOptions();
+                //options.AddAdditionalCapability("device", "iPhone 11");
+                options.SetPreference("general.useragent.override", user_agent );
+                //options.AddArguments("-headless");
+                driver = new FirefoxDriver(options);
+                driver.Navigate().GoToUrl("https://www.instagram.com/");
+                Thread.Sleep(2000);
+                Thread.Sleep(2000);
+                IWebElement Login = driver.FindElement(By.XPath("//button[contains(text(), 'Giriş Yap')]"));
+
+
+                Login.Click(); Thread.Sleep(2500);
+
+                IWebElement userName = driver.FindElement(By.Name("username"));
+                IWebElement password = driver.FindElement(By.Name("password"));
+
+
+
+
+                userName.SendKeys("Gladyo2035");
+                password.SendKeys("musto321");
+                Thread.Sleep(2500);
+                IWebElement loginBtn = driver.FindElement(By.XPath("//button[contains(.,'Giriş Yap')]"));
+                loginBtn.Click();
+                Thread.Sleep(3500);
+                //driver.Navigate().GoToUrl("https://www.instagram.com/accounts/onetap/?next=%2F");
+                //IWebElement SimdiDegil = driver.FindElement(By.XPath("//button[contains(.,'Şimdi Değil')]"));
+                //SimdiDegil.Click();
+                //Thread.Sleep(2500);
+                //IWebElement SimdiDegil2 = driver.FindElement(By.XPath("//button[contains(text(), 'İptal')]"));
+                //SimdiDegil2.Click();
+                return (control);
+            }
+            catch (Exception)
+            {
+                driver.Quit();
+                MessageBox.Show("Bir hata meydana geldi hesap bilgilerinizi ya da internet hızınızı kontrol edin");
+                return (control);
+
+            }
+
+
+            ////driver.Navigate().GoToUrl("https://www.instagram.com/");
         }
 
     }

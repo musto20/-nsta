@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,18 +44,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.HesapTB = new System.Windows.Forms.TextBox();
             this.KontrolluTakip = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Takipci_SayisiTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,17 +77,6 @@
             this.button1.Text = "Giriş Yap ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(79, 469);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 55);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Resimleri İsimlendir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -232,17 +224,6 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Facebook Girişi";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(79, 375);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 63);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Klasöre seç";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(390, 384);
@@ -273,7 +254,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(29, 231);
+            this.button7.Location = new System.Drawing.Point(602, 442);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 40);
             this.button7.TabIndex = 13;
@@ -284,12 +265,14 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Location = new System.Drawing.Point(-2, 60);
@@ -300,50 +283,72 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.button8);
+            this.panel4.Controls.Add(this.HesapTB);
             this.panel4.Controls.Add(this.KontrolluTakip);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.listBox1);
             this.panel4.Controls.Add(this.Takipci_SayisiTB);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.button7);
             this.panel4.Location = new System.Drawing.Point(733, 52);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(359, 298);
+            this.panel4.Size = new System.Drawing.Size(423, 366);
             this.panel4.TabIndex = 14;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(173, 321);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 21;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // HesapTB
+            // 
+            this.HesapTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HesapTB.Location = new System.Drawing.Point(198, 13);
+            this.HesapTB.Name = "HesapTB";
+            this.HesapTB.Size = new System.Drawing.Size(150, 23);
+            this.HesapTB.TabIndex = 20;
             // 
             // KontrolluTakip
             // 
-            this.KontrolluTakip.Location = new System.Drawing.Point(176, 248);
+            this.KontrolluTakip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.KontrolluTakip.FlatAppearance.BorderSize = 0;
+            this.KontrolluTakip.Location = new System.Drawing.Point(148, 108);
             this.KontrolluTakip.Name = "KontrolluTakip";
             this.KontrolluTakip.Size = new System.Drawing.Size(75, 23);
             this.KontrolluTakip.TabIndex = 19;
-            this.KontrolluTakip.Text = "button8";
-            this.KontrolluTakip.UseVisualStyleBackColor = true;
+            this.KontrolluTakip.Text = "Ekle ";
+            this.KontrolluTakip.UseVisualStyleBackColor = false;
             this.KontrolluTakip.Click += new System.EventHandler(this.KontrolluTakip_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 95);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(3, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(165, 17);
             this.label7.TabIndex = 17;
-            this.label7.Text = "label7";
+            this.label7.Text = "Takip edilecek hesap adı";
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(191, 74);
+            this.listBox1.Location = new System.Drawing.Point(98, 139);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(174, 160);
             this.listBox1.TabIndex = 16;
             // 
             // Takipci_SayisiTB
             // 
             this.Takipci_SayisiTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Takipci_SayisiTB.Location = new System.Drawing.Point(211, 13);
+            this.Takipci_SayisiTB.Location = new System.Drawing.Point(198, 64);
             this.Takipci_SayisiTB.Name = "Takipci_SayisiTB";
-            this.Takipci_SayisiTB.Size = new System.Drawing.Size(100, 23);
+            this.Takipci_SayisiTB.Size = new System.Drawing.Size(77, 23);
             this.Takipci_SayisiTB.TabIndex = 15;
             this.Takipci_SayisiTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Takipci_SayisiTB_KeyDown);
             this.Takipci_SayisiTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Takipci_SayisiTB_KeyPress);
@@ -352,11 +357,35 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(3, 19);
+            this.label6.Location = new System.Drawing.Point(3, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 17);
+            this.label6.Size = new System.Drawing.Size(124, 17);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Kaç Takipçi Takip Edilecek";
+            this.label6.Text = "Kaç Kişi Takip Edil";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 15;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(108, 413);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 17;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
@@ -385,7 +414,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -399,7 +427,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Timer timer1;
@@ -411,6 +438,11 @@
         private System.Windows.Forms.Button KontrolluTakip;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox HesapTB;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button9;
     }
 }
 

@@ -24,7 +24,8 @@ namespace WindowsFormsApp1
         mailLogin log = new mailLogin();
         
         public string KlasorYolu;
-        public int sayac = 0,sayac2=0,control=1,takipci=0;
+        public int sayac = 0,sayac2=0,control=1,takipci=0,tsayac=0;
+        string[,] x=new string[10,2];
         public Form1()
         {
             InitializeComponent();
@@ -34,21 +35,6 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
                 control=log.mailLog(NicknameTBox.Text, SifreTBox.Text);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            ChangeName chngname = new ChangeName();
-            chngname.ChanceName(KlasorYolu);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog Klasor = new FolderBrowserDialog();
-            Klasor.ShowDialog();
-            
-            KlasorYolu = Klasor.SelectedPath;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -124,9 +110,38 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] value2 = listBox1.Items[0].ToString().Split(':');
+                log.KontrolluFollow(value2[0],Convert.ToInt32( value2[1]));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            control = log.mailLog2(NicknameTBox.Text, SifreTBox.Text);
+        }
+
         private void KontrolluTakip_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(Takipci_SayisiTB.Text);
+            if ("10"==listBox1.Items.Count.ToString())
+            {
+                MessageBox.Show("10 kayıttan fazlası yapılamaz");
+            }
+            else
+            {
+                listBox1.Items.Add(string.Format("{0}:{1}", HesapTB.Text, Takipci_SayisiTB.Text));
+            }
         }
 
         private void Takipci_SayisiTB_KeyDown(object sender, KeyEventArgs e)
