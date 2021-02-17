@@ -115,7 +115,15 @@ namespace WindowsFormsApp1
             try
             {
                 string[] value2 = listBox1.Items[0].ToString().Split(':');
-                log.KontrolluFollow(value2[0],Convert.ToInt32( value2[1]));
+                Boolean gelen=log.KontrolluFollow(value2[0],Convert.ToInt32( value2[1]),Convert.ToInt32(numeric1.Value),Convert.ToInt32(numeric2.Value));
+                if (gelen==true)
+                {
+                    listBox1.Items.RemoveAt(0);
+                }
+                else
+                {
+                    MessageBox.Show("Ekleme sırasında hata oldu");
+                }
             }
             catch (Exception)
             {
@@ -129,7 +137,12 @@ namespace WindowsFormsApp1
 
         private void button9_Click(object sender, EventArgs e)
         {
-            control = log.mailLog2(NicknameTBox.Text, SifreTBox.Text);
+            //control = log.mailLog2(NicknameTBox.Text, SifreTBox.Text);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void KontrolluTakip_Click(object sender, EventArgs e)

@@ -49,20 +49,34 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numeric1 = new System.Windows.Forms.NumericUpDown();
+            this.numeric2 = new System.Windows.Forms.NumericUpDown();
+            this.button9 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.HesapTB = new System.Windows.Forms.TextBox();
             this.KontrolluTakip = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Takipci_SayisiTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric2)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,7 +151,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.FacePassTxt);
             this.panel1.Controls.Add(this.FaceMailTxt);
             this.panel1.Controls.Add(this.Lb);
@@ -226,7 +240,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(390, 384);
+            this.button5.Location = new System.Drawing.Point(43, 467);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(141, 71);
             this.button5.TabIndex = 11;
@@ -254,7 +268,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(602, 442);
+            this.button7.Location = new System.Drawing.Point(247, 378);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 40);
             this.button7.TabIndex = 13;
@@ -265,45 +279,185 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.button2);
             this.panel3.Location = new System.Drawing.Point(-2, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1332, 618);
+            this.panel3.Size = new System.Drawing.Size(1332, 864);
             this.panel3.TabIndex = 14;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(391, 352);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(162, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Takip Başlatma ve Spam Ayarları";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button8);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.checkBox1);
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.numeric1);
+            this.panel5.Controls.Add(this.numeric2);
+            this.panel5.Location = new System.Drawing.Point(390, 355);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(338, 302);
+            this.panel5.TabIndex = 22;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(120, 253);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 21;
+            this.button8.Text = "Takip Etme İşlemini Başlat";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(244, 154);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "saniye bekle";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(127, 154);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 13);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "işlemde";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(180, 151);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(44, 20);
+            this.textBox2.TabIndex = 28;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(77, 152);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(44, 20);
+            this.textBox1.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(42, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Her ";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 155);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 25;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 117);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "arası saniye";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(146, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(17, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "ile";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "İşlem süresi :";
+            // 
+            // numeric1
+            // 
+            this.numeric1.Location = new System.Drawing.Point(77, 112);
+            this.numeric1.Name = "numeric1";
+            this.numeric1.Size = new System.Drawing.Size(63, 20);
+            this.numeric1.TabIndex = 20;
+            this.numeric1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // numeric2
+            // 
+            this.numeric2.Location = new System.Drawing.Point(180, 112);
+            this.numeric2.Name = "numeric2";
+            this.numeric2.Size = new System.Drawing.Size(58, 20);
+            this.numeric2.TabIndex = 21;
+            this.numeric2.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(108, 413);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 17;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panel4
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.button8);
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.HesapTB);
             this.panel4.Controls.Add(this.KontrolluTakip);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.listBox1);
             this.panel4.Controls.Add(this.Takipci_SayisiTB);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(733, 52);
+            this.panel4.Location = new System.Drawing.Point(796, 52);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(423, 366);
             this.panel4.TabIndex = 14;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(173, 321);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // HesapTB
             // 
@@ -363,36 +517,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Kaç Kişi Takip Edil";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(108, 413);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 17;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1325, 675);
+            this.ClientSize = new System.Drawing.Size(1325, 926);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button6);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -405,6 +535,10 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -440,9 +574,20 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox HesapTB;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numeric1;
+        private System.Windows.Forms.NumericUpDown numeric2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label11;
     }
 }
 
