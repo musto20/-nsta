@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        mailLogin log = new mailLogin();
+        public mailLogin log = new mailLogin();
         
         public string KlasorYolu;
         public int sayac = 0,sayac2=0,control=1,takipci=0,tsayac=0;
@@ -107,22 +107,44 @@ namespace WindowsFormsApp1
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            log.driver.Quit();
             Application.Exit();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            
+            string[] value2 = listBox1.Items[0].ToString().Split(':');
             try
             {
-                string[] value2 = listBox1.Items[0].ToString().Split(':');
-                Boolean gelen=log.KontrolluFollow(value2[0],Convert.ToInt32( value2[1]),Convert.ToInt32(numeric1.Value),Convert.ToInt32(numeric2.Value));
-                if (gelen==true)
+                int a = 0;
+                Boolean gelen;
+                if (checkBox1.Checked == true || textBox1.Text != "" || textBox2.Text != "") //Eğer checkbox seçiliyse
                 {
-                    listBox1.Items.RemoveAt(0);
+
+                    int tekrar = Convert.ToInt32(textBox1.Text);
+                    int bekleme = Convert.ToInt32(textBox2.Text);
+                    gelen = log.KontrolluFollow(value2[0], Convert.ToInt32(value2[1]), Convert.ToInt32(numeric1.Value), Convert.ToInt32(numeric2.Value), tekrar, bekleme);
+                    if (gelen == true)
+                    {
+                        listBox1.Items.RemoveAt(0);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ekleme sırasında hata oldu");
+                    }
                 }
-                else
+                else if (checkBox1.Checked == false)
                 {
-                    MessageBox.Show("Ekleme sırasında hata oldu");
+                    gelen = log.KontrolluFollow(value2[0], Convert.ToInt32(value2[1]), Convert.ToInt32(numeric1.Value), Convert.ToInt32(numeric2.Value), Convert.ToInt32(value2[1]), a);
+                    if (gelen == true)
+                    {
+                        listBox1.Items.RemoveAt(0);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ekleme sırasında hata oldu");
+                    }
                 }
             }
             catch (Exception)
@@ -140,7 +162,7 @@ namespace WindowsFormsApp1
             //control = log.mailLog2(NicknameTBox.Text, SifreTBox.Text);
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

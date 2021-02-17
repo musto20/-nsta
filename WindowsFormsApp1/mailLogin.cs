@@ -292,7 +292,7 @@ namespace WindowsFormsApp1
 
         //    ////driver.Navigate().GoToUrl("https://www.instagram.com/");
         //}
-        public bool KontrolluFollow(string name, int sayi,int rand1,int rand2)
+        public bool KontrolluFollow(string name, int sayi,int rand1,int rand2,int tekrar,int bekle)
         {
                 int t = 1;
                 string[] stringSeparators = new string[] { "\r\n" };
@@ -362,6 +362,7 @@ namespace WindowsFormsApp1
             
         }
        
+
 
     }
 }

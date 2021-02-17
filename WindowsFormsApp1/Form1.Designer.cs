@@ -71,6 +71,11 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Takipci_SayisiTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numeric1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric2)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -240,7 +246,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(43, 467);
+            this.button5.Location = new System.Drawing.Point(43, 442);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(141, 71);
             this.button5.TabIndex = 11;
@@ -268,7 +274,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(247, 378);
+            this.button7.Location = new System.Drawing.Point(64, 357);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 40);
             this.button7.TabIndex = 13;
@@ -279,7 +285,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.panel4);
@@ -297,7 +303,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(391, 352);
+            this.label14.Location = new System.Drawing.Point(74, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(162, 13);
             this.label14.TabIndex = 31;
@@ -306,6 +312,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.button8);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label12);
@@ -318,7 +325,7 @@
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.numeric1);
             this.panel5.Controls.Add(this.numeric2);
-            this.panel5.Location = new System.Drawing.Point(390, 355);
+            this.panel5.Location = new System.Drawing.Point(881, 356);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(338, 302);
             this.panel5.TabIndex = 22;
@@ -377,12 +384,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 155);
+            this.checkBox1.Location = new System.Drawing.Point(13, 158);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 25;
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label10
             // 
@@ -437,7 +443,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(108, 413);
+            this.button9.Location = new System.Drawing.Point(64, 403);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 17;
@@ -456,7 +462,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(796, 52);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(423, 366);
+            this.panel4.Size = new System.Drawing.Size(423, 298);
             this.panel4.TabIndex = 14;
             // 
             // HesapTB
@@ -471,7 +477,7 @@
             // 
             this.KontrolluTakip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.KontrolluTakip.FlatAppearance.BorderSize = 0;
-            this.KontrolluTakip.Location = new System.Drawing.Point(148, 108);
+            this.KontrolluTakip.Location = new System.Drawing.Point(156, 93);
             this.KontrolluTakip.Name = "KontrolluTakip";
             this.KontrolluTakip.Size = new System.Drawing.Size(75, 23);
             this.KontrolluTakip.TabIndex = 19;
@@ -492,7 +498,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(98, 139);
+            this.listBox1.Location = new System.Drawing.Point(101, 122);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(174, 160);
             this.listBox1.TabIndex = 16;
@@ -516,6 +522,53 @@
             this.label6.Size = new System.Drawing.Size(124, 17);
             this.label6.TabIndex = 14;
             this.label6.Text = "Kaç Kişi Takip Edil";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.button2);
+            this.panel6.Controls.Add(this.label16);
+            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Location = new System.Drawing.Point(510, 357);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(338, 302);
+            this.panel6.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(74, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(162, 13);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Takip Başlatma ve Spam Ayarları";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(157, 51);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 32;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(35, 54);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Aranacak kelime";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(115, 184);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Ara";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -541,6 +594,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numeric2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -588,6 +643,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label15;
     }
 }
 
