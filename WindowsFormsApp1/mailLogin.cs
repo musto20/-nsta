@@ -18,8 +18,11 @@ namespace WindowsFormsApp1
 {
     public class mailLogin
     {
+       
         public static int dosyaSayisi, i = 0, control = 0;
         public IWebDriver driver { get; set; }
+        
+
         public int mailLog(string mail, string pass)
         {
             try
@@ -31,7 +34,7 @@ namespace WindowsFormsApp1
                 options.AddArgument("--no-sandbox");
                 options.AddArgument("--window-size=1920,1080");
                 options.AddArgument("—disable - gpu");
-                options.AddArgument("--headless");
+                //options.AddArgument("--headless");
                 driver = new ChromeDriver(driverService,options);
                 driver.Navigate().GoToUrl("https://www.instagram.com/");
                 Thread.Sleep(2000);
@@ -47,12 +50,13 @@ namespace WindowsFormsApp1
 
 
 
-                userName.SendKeys("Gladyo2035");
-                password.SendKeys("musto321");
+                userName.SendKeys("Gladyo3520");
+                password.SendKeys("mustafa2035");
                 Thread.Sleep(2500);
                 IWebElement loginBtn = driver.FindElement(By.XPath("//button[contains(.,'Giriş Yap')]"));
                 loginBtn.Click();
                 Thread.Sleep(3500);
+                driver.Navigate().GoToUrl("https://www.instagram.com/");
                 //driver.Navigate().GoToUrl("https://www.instagram.com/accounts/onetap/?next=%2F");
                 //IWebElement SimdiDegil = driver.FindElement(By.XPath("//button[contains(.,'Şimdi Değil')]"));
 
@@ -294,14 +298,15 @@ namespace WindowsFormsApp1
         //}
         public bool KontrolluFollow(string name, int sayi,int rand1,int rand2,int tekrar,int bekle)
         {
-                int t = 1;
-                string[] stringSeparators = new string[] { "\r\n" };
+            Form1 ad = new Form1();
+            int t = 1;
+                string[] kural = new string[] { "\r\n" };
                 driver.Navigate().GoToUrl("https://www.instagram.com/" + name + "/");
                 IWebElement takipci2 = driver.FindElement(By.XPath("//li[2]/a"));
                 string sayi2 = takipci2.Text;
-                string[] takipcisayisi = sayi2.Split(stringSeparators, StringSplitOptions.None);
+                string[] takipcisayisi = sayi2.Split(kural, StringSplitOptions.None);
 
-            driver.FindElement(By.XPath("//li[3]/a")).Click();
+            driver.FindElement(By.XPath("//li[2]/a")).Click();
             //driver.Navigate().GoToUrl("https://www.instagram.com/" + name + "/followers/");
             Thread.Sleep(2000);
                 while (0 < sayi)
@@ -318,6 +323,17 @@ namespace WindowsFormsApp1
 
                     if ("Takip Et" == driver.FindElement(By.CssSelector(".wo9IH:nth-child(" + (t) + ") .sqdOP")).Text)
                         {
+                        IWebElement nick = driver.FindElement(By.CssSelector(".wo9IH:nth-child(" + t + ") .FPmhX"));
+                        string isim = nick.Text;
+                        foreach (Form frm in Application.OpenForms)
+                        {
+                            if (frm.GetType() == typeof(Form1))
+                            {
+                                Form1 frmTemp = (Form1)frm;
+                                frmTemp.ekle(isim);
+                            }
+                        }
+                        //ad.listBox2.Items.Add(isim);
                         driver.FindElement(By.CssSelector(".wo9IH:nth-child(" + (t) + ") .sqdOP")).Click();
                         Thread.Sleep(1000);
                         sayi--;
@@ -362,7 +378,64 @@ namespace WindowsFormsApp1
             
         }
        
+        public int search(string text,int sayi)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            int giden = 1;
 
+            int c = 1;
+            int kalan;
+            if (sayi % 3 == 0)
+            {
+                kalan = sayi / 3;
+            }
+            else
+                kalan = (sayi / 3) + 1;
+
+           driver.Navigate().GoToUrl("https://www.instagram.com/explore/tags/"+text+"/");
+            Thread.Sleep(2000);
+            while (c<=sayi)
+            {
+                try
+                {
+                    for (int j = 1; j <= kalan; j++)
+                    {
+                        for (int z = 1; z <= 3; z++)
+                        {
+                            driver.FindElement(By.CssSelector("div:nth-child(2) .Nnq7C:nth-child(" + j + ") > .v1Nh3:nth-child(" + z + ") .\\_9AhH0")).Click();
+                            Thread.Sleep(2000);
+                            if (true == driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Displayed) 
+                            {
+                                driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Click();
+                                //driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Click();
+                            }
+                            else
+                            {
+
+                            }
+                                
+                            
+                            driver.FindElement(By.CssSelector(".fr66n .\\_8-yf5")).Click();
+                            
+                            Thread.Sleep(2000);
+                            driver.FindElement(By.XPath("//*[@id='react-root']/section/nav[1]/div/header/div/div[1]")).Click();
+                            Thread.Sleep(2000);
+                            c++;
+                        }
+                        IWebElement user = driver.FindElement(By.XPath("//*[@id='react - root']/section/main/article/div[1]/div/div/div["+(j+1)+"]"));
+                        js.ExecuteScript("arguments[0].scrollIntoView(true);", user);
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                
+                    
+                
+            }
+            return giden;
+        }
 
     }
 }

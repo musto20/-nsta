@@ -36,7 +36,6 @@ namespace WindowsFormsApp1
         {
                 control=log.mailLog(NicknameTBox.Text, SifreTBox.Text);
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             if (control == 0)
@@ -61,19 +60,16 @@ namespace WindowsFormsApp1
 
 
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             Imagedate form2 = new Imagedate();
             form2.Show();  // form2 göster diyoruz
             this.Hide();   // bu yani form1 gizle diyoruz
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             log.FaceLog("m.zeycan20@hotmail.com","mzeycan2035");
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             int i = 10;
@@ -95,8 +91,6 @@ namespace WindowsFormsApp1
             //}
             
         }
-
-
         private void Takipci_SayisiTB_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -107,51 +101,60 @@ namespace WindowsFormsApp1
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            log.driver.Quit();
-            Application.Exit();
+            try
+            {
+                log.driver.Quit();
+                Application.Exit();
+            }
+            catch (Exception)
+            {}
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            while (listBox1.Items.Count!=0)
+            {
+                string[] value2 = listBox1.Items[0].ToString().Split(':');
+                try
+                {
+                    int a = 0;
+                    Boolean gelen;
+                    if (checkBox1.Checked == true || textBox1.Text != "" || textBox2.Text != "") //Eğer checkbox seçiliyse
+                    {
+
+                        int tekrar = Convert.ToInt32(textBox1.Text);
+                        int bekleme = Convert.ToInt32(textBox2.Text);
+                        gelen = log.KontrolluFollow(value2[0], Convert.ToInt32(value2[1]), Convert.ToInt32(numeric1.Value), Convert.ToInt32(numeric2.Value), tekrar, bekleme);
+                        if (gelen == true)
+                        {
+                            listBox1.Items.RemoveAt(0);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ekleme sırasında hata oldu");
+                        }
+                    }
+                    else if (checkBox1.Checked == false)
+                    {
+                        gelen = log.KontrolluFollow(value2[0], Convert.ToInt32(value2[1]), Convert.ToInt32(numeric1.Value), Convert.ToInt32(numeric2.Value), Convert.ToInt32(value2[1]), a);
+                        if (gelen == true)
+                        {
+                            listBox1.Items.RemoveAt(0);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ekleme sırasında hata oldu");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
             
-            string[] value2 = listBox1.Items[0].ToString().Split(':');
-            try
-            {
-                int a = 0;
-                Boolean gelen;
-                if (checkBox1.Checked == true || textBox1.Text != "" || textBox2.Text != "") //Eğer checkbox seçiliyse
-                {
-
-                    int tekrar = Convert.ToInt32(textBox1.Text);
-                    int bekleme = Convert.ToInt32(textBox2.Text);
-                    gelen = log.KontrolluFollow(value2[0], Convert.ToInt32(value2[1]), Convert.ToInt32(numeric1.Value), Convert.ToInt32(numeric2.Value), tekrar, bekleme);
-                    if (gelen == true)
-                    {
-                        listBox1.Items.RemoveAt(0);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ekleme sırasında hata oldu");
-                    }
-                }
-                else if (checkBox1.Checked == false)
-                {
-                    gelen = log.KontrolluFollow(value2[0], Convert.ToInt32(value2[1]), Convert.ToInt32(numeric1.Value), Convert.ToInt32(numeric2.Value), Convert.ToInt32(value2[1]), a);
-                    if (gelen == true)
-                    {
-                        listBox1.Items.RemoveAt(0);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ekleme sırasında hata oldu");
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
             
 
 
@@ -160,11 +163,6 @@ namespace WindowsFormsApp1
         private void button9_Click(object sender, EventArgs e)
         {
             //control = log.mailLog2(NicknameTBox.Text, SifreTBox.Text);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void KontrolluTakip_Click(object sender, EventArgs e)
@@ -176,6 +174,53 @@ namespace WindowsFormsApp1
             else
             {
                 listBox1.Items.Add(string.Format("{0}:{1}", HesapTB.Text, Takipci_SayisiTB.Text));
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Etiket et = new Etiket();
+            et.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if ("10" == listBox3.Items.Count.ToString())
+            {
+                MessageBox.Show("10 kayıttan fazlası yapılamaz");
+            }
+            else
+            {
+                listBox3.Items.Add(string.Format("{0}:{1}", textBox4.Text, textBox3.Text));
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true)
+            {
+                MessageBox.Show("Kontrol etkinlikleri burada sınırlandırılmıştır");
+            }
+    }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string[] value2 = listBox3.Items[0].ToString().Split(':');
+             int gelen=log.search(value2[0],Convert.ToInt32(value2[1]));
+            listBox3.Items.RemoveAt(0);
+            if (gelen==1)
+            {
+                MessageBox.Show("İşlem doğru bir biçimde gerçekleşti.");
+            }
+            else
+            {
+                MessageBox.Show("İşlem doğru bir biçimde gerçekleşmedi.");
             }
         }
 
@@ -198,6 +243,11 @@ namespace WindowsFormsApp1
             log.mailShare();
             timer1.Interval = 60000;
         }
-
+        public void ekle(string isim)
+        {
+            listBox2.Items.Add(isim); 
+            listBox2.Refresh();
+           
+        }
     }
 }

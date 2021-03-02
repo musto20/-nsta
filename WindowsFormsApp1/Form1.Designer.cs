@@ -49,8 +49,18 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -71,19 +81,19 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Takipci_SayisiTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric2)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -107,7 +117,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.SifreTBox);
             this.panel2.Controls.Add(this.NicknameTBox);
-            this.panel2.Location = new System.Drawing.Point(64, 52);
+            this.panel2.Location = new System.Drawing.Point(13, 92);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 298);
@@ -163,7 +173,7 @@
             this.panel1.Controls.Add(this.Lb);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(390, 52);
+            this.panel1.Location = new System.Drawing.Point(339, 91);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(338, 298);
@@ -226,27 +236,27 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(171, 15);
+            this.label3.Location = new System.Drawing.Point(112, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 25);
+            this.label3.Size = new System.Drawing.Size(68, 25);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Hesap Girişi";
+            this.label3.Text = "E-Mail";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(505, 15);
+            this.label5.Location = new System.Drawing.Point(445, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 25);
+            this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Facebook Girişi";
+            this.label5.Text = "Facebook ";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(43, 442);
+            this.button5.Location = new System.Drawing.Point(420, 440);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(141, 71);
             this.button5.TabIndex = 11;
@@ -259,7 +269,7 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(12, 12);
+            this.button6.Location = new System.Drawing.Point(170, 469);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(198, 42);
             this.button6.TabIndex = 12;
@@ -274,7 +284,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(64, 357);
+            this.button7.Location = new System.Drawing.Point(41, 472);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 40);
             this.button7.TabIndex = 13;
@@ -285,7 +295,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.panel4);
@@ -295,19 +308,104 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Location = new System.Drawing.Point(-2, 60);
+            this.panel3.Controls.Add(this.menuStrip1);
+            this.panel3.Location = new System.Drawing.Point(-2, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1332, 864);
+            this.panel3.Size = new System.Drawing.Size(1680, 912);
             this.panel3.TabIndex = 14;
             // 
-            // label14
+            // panel6
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(74, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(162, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Takip Başlatma ve Spam Ayarları";
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.button4);
+            this.panel6.Controls.Add(this.label15);
+            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.button2);
+            this.panel6.Controls.Add(this.listBox3);
+            this.panel6.Controls.Add(this.label16);
+            this.panel6.Controls.Add(this.textBox4);
+            this.panel6.Location = new System.Drawing.Point(689, 395);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(338, 393);
+            this.panel6.TabIndex = 36;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(136, 365);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "Ara";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(118, 76);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "İşlem sayısı";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(183, 70);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(53, 20);
+            this.textBox3.TabIndex = 36;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(262, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 58);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "EKLE";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(24, 133);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(300, 212);
+            this.listBox3.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(35, 38);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Aranacak kelime";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(136, 31);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 32;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.listBox2);
+            this.panel7.Location = new System.Drawing.Point(1455, 167);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 222);
+            this.panel7.TabIndex = 24;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(21, 33);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(120, 121);
+            this.listBox2.TabIndex = 0;
             // 
             // panel5
             // 
@@ -325,16 +423,25 @@
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.numeric1);
             this.panel5.Controls.Add(this.numeric2);
-            this.panel5.Location = new System.Drawing.Point(881, 356);
+            this.panel5.Location = new System.Drawing.Point(1111, 91);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(338, 302);
+            this.panel5.Size = new System.Drawing.Size(338, 298);
             this.panel5.TabIndex = 22;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(74, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(162, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Takip Başlatma ve Spam Ayarları";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(120, 253);
+            this.button8.Location = new System.Drawing.Point(89, 245);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(149, 23);
             this.button8.TabIndex = 21;
             this.button8.Text = "Takip Etme İşlemini Başlat";
             this.button8.UseVisualStyleBackColor = true;
@@ -364,6 +471,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(44, 20);
             this.textBox2.TabIndex = 28;
+            this.textBox2.Text = "50";
             // 
             // textBox1
             // 
@@ -371,6 +479,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(44, 20);
             this.textBox1.TabIndex = 27;
+            this.textBox1.Text = "35";
             // 
             // label11
             // 
@@ -443,7 +552,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(64, 403);
+            this.button9.Location = new System.Drawing.Point(41, 440);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 17;
@@ -460,7 +569,7 @@
             this.panel4.Controls.Add(this.listBox1);
             this.panel4.Controls.Add(this.Takipci_SayisiTB);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(796, 52);
+            this.panel4.Location = new System.Drawing.Point(682, 91);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(423, 298);
             this.panel4.TabIndex = 14;
@@ -519,65 +628,44 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.Location = new System.Drawing.Point(3, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 17);
+            this.label6.Size = new System.Drawing.Size(154, 17);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Kaç Kişi Takip Edil";
+            this.label6.Text = "Kaç Kişi Takip Edilecek";
             // 
-            // panel6
+            // menuStrip1
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.button2);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.label15);
-            this.panel6.Location = new System.Drawing.Point(510, 357);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(338, 302);
-            this.panel6.TabIndex = 23;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1680, 24);
+            this.menuStrip1.TabIndex = 25;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // label15
+            // toolStripMenuItem1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(74, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(162, 13);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Takip Başlatma ve Spam Ayarları";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(54, 20);
+            this.toolStripMenuItem1.Text = "Textim";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // textBox3
+            // label17
             // 
-            this.textBox3.Location = new System.Drawing.Point(157, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 32;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(35, 54);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 13);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "Aranacak kelime";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(115, 184);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Ara";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(686, 75);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 13);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Takip İşlemi";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1325, 926);
+            this.ClientSize = new System.Drawing.Size(1678, 926);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button6);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -588,14 +676,17 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -643,11 +734,19 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label17;
     }
 }
 
