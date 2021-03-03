@@ -49,6 +49,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -83,7 +84,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label17 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.CommentTB = new System.Windows.Forms.TextBox();
+            this.CommmentAdd = new System.Windows.Forms.Button();
+            this.CommentLB = new System.Windows.Forms.ListBox();
+            this.CommentCheck = new System.Windows.Forms.CheckBox();
+            this.CommentCheckLb = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -94,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numeric2)).BeginInit();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -295,6 +302,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel7);
@@ -314,9 +322,20 @@
             this.panel3.Size = new System.Drawing.Size(1680, 912);
             this.panel3.TabIndex = 14;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(686, 75);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 13);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Takip İşlemi";
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.CommentCheckLb);
+            this.panel6.Controls.Add(this.CommentCheck);
             this.panel6.Controls.Add(this.button4);
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.textBox3);
@@ -649,14 +668,58 @@
             this.toolStripMenuItem1.Text = "Textim";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // label17
+            // panel8
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(686, 75);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 13);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "Takip İşlemi";
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.CommentLB);
+            this.panel8.Controls.Add(this.CommmentAdd);
+            this.panel8.Controls.Add(this.CommentTB);
+            this.panel8.Location = new System.Drawing.Point(1038, 400);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(369, 383);
+            this.panel8.TabIndex = 38;
+            // 
+            // CommentTB
+            // 
+            this.CommentTB.Location = new System.Drawing.Point(60, 33);
+            this.CommentTB.Name = "CommentTB";
+            this.CommentTB.Size = new System.Drawing.Size(100, 20);
+            this.CommentTB.TabIndex = 0;
+            // 
+            // CommmentAdd
+            // 
+            this.CommmentAdd.Location = new System.Drawing.Point(193, 31);
+            this.CommmentAdd.Name = "CommmentAdd";
+            this.CommmentAdd.Size = new System.Drawing.Size(75, 23);
+            this.CommmentAdd.TabIndex = 1;
+            this.CommmentAdd.Text = "Yorum Ekle";
+            this.CommmentAdd.UseVisualStyleBackColor = true;
+            // 
+            // CommentLB
+            // 
+            this.CommentLB.FormattingEnabled = true;
+            this.CommentLB.Location = new System.Drawing.Point(14, 83);
+            this.CommentLB.Name = "CommentLB";
+            this.CommentLB.Size = new System.Drawing.Size(254, 134);
+            this.CommentLB.TabIndex = 2;
+            // 
+            // CommentCheck
+            // 
+            this.CommentCheck.AutoSize = true;
+            this.CommentCheck.Location = new System.Drawing.Point(24, 102);
+            this.CommentCheck.Name = "CommentCheck";
+            this.CommentCheck.Size = new System.Drawing.Size(15, 14);
+            this.CommentCheck.TabIndex = 38;
+            this.CommentCheck.UseVisualStyleBackColor = true;
+            // 
+            // CommentCheckLb
+            // 
+            this.CommentCheckLb.AutoSize = true;
+            this.CommentCheckLb.Location = new System.Drawing.Point(45, 102);
+            this.CommentCheckLb.Name = "CommentCheckLb";
+            this.CommentCheckLb.Size = new System.Drawing.Size(90, 13);
+            this.CommentCheckLb.TabIndex = 39;
+            this.CommentCheckLb.Text = "Yorum yapılsın mı ";
             // 
             // Form1
             // 
@@ -687,6 +750,8 @@
             this.panel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -747,6 +812,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.ListBox CommentLB;
+        private System.Windows.Forms.Button CommmentAdd;
+        private System.Windows.Forms.TextBox CommentTB;
+        private System.Windows.Forms.Label CommentCheckLb;
+        private System.Windows.Forms.CheckBox CommentCheck;
     }
 }
 

@@ -212,7 +212,7 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             string[] value2 = listBox3.Items[0].ToString().Split(':');
-             int gelen=log.search(value2[0],Convert.ToInt32(value2[1]));
+             int gelen=log.search(value2[0],Convert.ToInt32(value2[1]),CommentCheck.Checked);
             listBox3.Items.RemoveAt(0);
             if (gelen==1)
             {

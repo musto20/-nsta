@@ -299,7 +299,7 @@ namespace WindowsFormsApp1
         public bool KontrolluFollow(string name, int sayi,int rand1,int rand2,int tekrar,int bekle)
         {
             Form1 ad = new Form1();
-            int t = 1;
+            int t = 1,artıs=0;
                 string[] kural = new string[] { "\r\n" };
                 driver.Navigate().GoToUrl("https://www.instagram.com/" + name + "/");
                 IWebElement takipci2 = driver.FindElement(By.XPath("//li[2]/a"));
@@ -322,7 +322,7 @@ namespace WindowsFormsApp1
                     //IWebElement buttons = driver.FindElement(By.CssSelector(".wo9IH:nth-child("+(t)+") .sqdOP")).Text;
 
                     if ("Takip Et" == driver.FindElement(By.CssSelector(".wo9IH:nth-child(" + (t) + ") .sqdOP")).Text)
-                        {
+                    {
                         IWebElement nick = driver.FindElement(By.CssSelector(".wo9IH:nth-child(" + t + ") .FPmhX"));
                         string isim = nick.Text;
                         foreach (Form frm in Application.OpenForms)
@@ -338,6 +338,11 @@ namespace WindowsFormsApp1
                         Thread.Sleep(1000);
                         sayi--;
                         t++;
+                        artıs++;
+                        if (artıs%tekrar==0)
+                        {
+                            Thread.Sleep(bekle*1000);
+                        }
                         Thread.Sleep(rand * 1000);
                     }
                     else
@@ -378,7 +383,7 @@ namespace WindowsFormsApp1
             
         }
        
-        public int search(string text,int sayi)
+        public int search(string text,int sayi,bool yorum)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             int giden = 1;
@@ -398,33 +403,36 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    for (int j = 1; j <= kalan; j++)
-                    {
-                        for (int z = 1; z <= 3; z++)
-                        {
-                            driver.FindElement(By.CssSelector("div:nth-child(2) .Nnq7C:nth-child(" + j + ") > .v1Nh3:nth-child(" + z + ") .\\_9AhH0")).Click();
-                            Thread.Sleep(2000);
-                            if (true == driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Displayed) 
-                            {
-                                driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Click();
-                                //driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Click();
-                            }
-                            else
-                            {
 
-                            }
+
+
+                    //for (int j = 1; j <= kalan; j++)
+                    //{
+                    //    for (int z = 1; z <= 3; z++)
+                    //    {
+                    //        driver.FindElement(By.CssSelector("div:nth-child(2) .Nnq7C:nth-child(" + j + ") > .v1Nh3:nth-child(" + z + ") .\\_9AhH0")).Click();
+                    //        Thread.Sleep(2000);
+                    //        if (true == driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Displayed) 
+                    //        {
+                    //            driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Click();
+                    //            //driver.FindElement(By.CssSelector(".glyphsSpriteGrey_Close")).Click();
+                    //        }
+                    //        else
+                    //        {
+
+                    //        }
                                 
                             
-                            driver.FindElement(By.CssSelector(".fr66n .\\_8-yf5")).Click();
+                    //        driver.FindElement(By.CssSelector(".fr66n .\\_8-yf5")).Click();
                             
-                            Thread.Sleep(2000);
-                            driver.FindElement(By.XPath("//*[@id='react-root']/section/nav[1]/div/header/div/div[1]")).Click();
-                            Thread.Sleep(2000);
-                            c++;
-                        }
-                        IWebElement user = driver.FindElement(By.XPath("//*[@id='react - root']/section/main/article/div[1]/div/div/div["+(j+1)+"]"));
-                        js.ExecuteScript("arguments[0].scrollIntoView(true);", user);
-                    }
+                    //        Thread.Sleep(2000);
+                    //        driver.FindElement(By.XPath("//*[@id='react-root']/section/nav[1]/div/header/div/div[1]")).Click();
+                    //        Thread.Sleep(2000);
+                    //        c++;
+                    //    }
+                    //    IWebElement user = driver.FindElement(By.XPath("//*[@id='react - root']/section/main/article/div[1]/div/div/div["+(j+1)+"]"));
+                    //    js.ExecuteScript("arguments[0].scrollIntoView(true);", user);
+                    //}
                 }
                 catch (Exception)
                 {
